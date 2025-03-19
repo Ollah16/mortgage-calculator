@@ -1,46 +1,79 @@
-# Getting Started with Create React App
+# 🏡 Mortgage Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A **responsive** Mortgage Repayment Calculator built with **React and TypeScript**. This tool helps users estimate their **monthly mortgage repayments** based on their **property value, deposit, interest rate, and mortgage term**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+✅ **Fully Responsive** – Optimized for both **mobile and desktop** devices  
+✅ **Real-Time Calculations** – Automatically updates as users input values  
+✅ **React + TypeScript** – Ensures **scalability & maintainability** 
+✅ **Accessible & User-Friendly** – Includes **input validation & structured UI**
+✅ **Styled with Vanilla CSS** – Implements the **BEM naming convention** for maintainability  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 📋 Prerequisites
 
-### `npm test`
+- Node.js (v16 or higher)
+- npm (v7 or higher)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📦 Installation Guide
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **1️⃣ Extract the ZIP File**
+- Unzip the downloaded file to a desired location.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **2️⃣ Install Dependencies**
+Navigate into the project directory and run:
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### **3️⃣ Run the Application**
+Start the development server with:
+npm start
 
-### `npm run eject`
+## 📂 Project Structure 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+/mortgage-calculator
+├── src
+│   ├── App.css
+│   ├── App.tsx
+│   ├── index.css
+│   ├── index.tsx
+│   ├── logo.svg
+│   ├── react-app-env.d.ts
+│   ├── reportWebVitals.ts
+│   ├── setupTests.ts
+│   ├── components
+│   │   ├── InputField.tsx
+│   │   ├── Modal.tsx
+│   │   └── MortgageCalculator.tsx
+│   ├── hooks
+│   │   └── useMortgageCalculator.ts
+│   ├── styles
+│   │   └── calculator.css
+│   ├── utils
+│   │   ├── mortgageCalculator.ts
+│   │   └── validateInput.ts
+│   └── __tests__
+│       └── mortgageCalculator.test.tsx
+├── .gitignore
+├── package-lock.json
+├── package.json
+├── README.md
+├── tsconfig.json
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🧮 Mortgage Calculation Formula
+This calculator uses the following formulas to determine the loan amount and monthly repayment:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### **1️⃣ Loan Calculation**
+loan = propertyValue - deposit;
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### **2️⃣ Monthly Repayment Calculation**
+monthlyRepayment = (interestRate / 100 / 12) / (1 - Math.pow(1 + interestRate / 100 / 12, -mortgageTermYears * 12)) * loan;
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🧪 Testing
+- Unit tests are located in `src/__tests__/`.
+- Run tests with: `npm test`

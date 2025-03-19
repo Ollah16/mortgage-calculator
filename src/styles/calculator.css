@@ -1,0 +1,251 @@
+/* ==========================================================================
+   CSS Variables
+   ========================================================================== */
+:root {
+    --color-primary: #008839;
+    --color-secondary: #62c422;
+    --color-text-primary: #333;
+    --color-text-secondary: #666;
+    --color-border: #e0e0e0;
+    --color-border-neutral: #ccc;
+    --color-error: #d32f2f;
+    --color-white: #ffffff;
+
+    --shadow-modal: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --transition-default: all 0.3s ease;
+
+    --font-family-base: 'Arial', sans-serif;
+    --font-size-base: 1rem;
+    --font-size-small: 0.875rem;
+    --font-size-xsmall: 0.75rem;
+    --font-size-large: 1.5rem;
+    --font-size-medium: 1.25rem;
+    --font-size-repayment: 1.125rem;
+}
+
+/* ==========================================================================
+   Calculator Layout
+   ========================================================================== */
+.calculator {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-white);
+    font-family: var(--font-family-base);
+    padding: 20px 0;
+}
+
+.calculator__reopen-btn {
+    padding: 10px;
+    color: var(--color-white);
+    border: none;
+    border-radius: 8px;
+    background-color: var(--color-primary);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    font-size: var(--font-size-base);
+}
+
+.calculator__reopen-btn:hover {
+    background-color: rgba(98, 196, 34, 0.9);
+}
+
+/* ==========================================================================
+   Modal Styles
+   ========================================================================== */
+.modal {
+    width: 500px;
+    height: 500px;
+    padding: 30px;
+    background-color: var(--color-white);
+    border-radius: 12px;
+    box-shadow: var(--shadow-modal);
+    position: relative;
+    transition: var(--transition-default);
+}
+
+.modal__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+}
+
+.modal__title {
+    font-size: var(--font-size-large);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.modal__close-btn {
+    padding: 10px;
+    color: var(--color-white);
+    border: none;
+    border-radius: 8px;
+    background-color: var(--color-primary);
+    transition: background-color 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto 0
+}
+
+.modal__close-btn:hover {
+    background-color: rgba(98, 196, 34, 0.9);
+}
+
+/* ==========================================================================
+   Form Layout and Inputs
+   ========================================================================== */
+.form__inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form__group--property-value,
+.form__group--deposit {
+    width: 100%;
+}
+
+.form__group--interest-rate,
+.form__group--mortgage-term {
+    width: 45%;
+    flex: 1;
+}
+
+.form__label {
+    font-style: italic;
+    color: var(--color-text-primary);
+    font-weight: 500;
+    font-size: var(--font-size-small);
+    line-height: 1.5;
+}
+
+.form__input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form__input {
+    border: 1px solid var(--color-border-neutral);
+    border-radius: 8px;
+    padding: 10px 30px 10px 10px;
+    width: 100%;
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    transition: var(--transition-default);
+}
+
+.form__input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 136, 57, 0.1);
+}
+
+.form__input[aria-invalid="true"] {
+    border-color: var(--color-error);
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+}
+
+.form__input--number {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+}
+
+.form__input--number::-webkit-inner-spin-button,
+.form__input--number::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form__suffix {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-primary);
+    font-size: var(--font-size-base);
+    pointer-events: none;
+}
+
+.form__error {
+    color: var(--color-error);
+    font-size: var(--font-size-xsmall);
+    margin-top: 2px;
+    font-style: normal;
+}
+
+/* ==========================================================================
+   Repayment Display
+   ========================================================================== */
+.repayment {
+    margin-top: auto;
+    text-align: center;
+}
+
+.repayment__text {
+    font-size: var(--font-size-repayment);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+
+.repayment__amount {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+@media (max-width: 500px) {
+    .modal {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .modal__title {
+        font-size: var(--font-size-medium);
+    }
+
+    .form__label {
+        font-size: var(--font-size-xsmall);
+    }
+
+    .form__group--property-value,
+    .form__group--deposit,
+    .form__group--interest-rate,
+    .form__group--mortgage-term {
+        width: 100%;
+    }
+
+    .form__input {
+        padding: 8px 25px 8px 8px;
+        font-size: var(--font-size-small);
+    }
+
+    .repayment__text {
+        font-size: var(--font-size-base);
+    }
+
+    .modal__close-btn {
+        max-width: 150px;
+    }
+}
