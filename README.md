@@ -8,9 +8,9 @@ A **responsive** Mortgage Repayment Calculator built with **React and TypeScript
 
 ✅ **Fully Responsive** – Optimized for both **mobile and desktop** devices  
 ✅ **Real-Time Calculations** – Automatically updates as users input values  
-✅ **React + TypeScript** – Ensures **scalability & maintainability** 
+✅ **React + TypeScript** – Ensures **scalability & maintainability**
 ✅ **Accessible & User-Friendly** – Includes **input validation & structured UI**
-✅ **Styled with Vanilla CSS** – Implements the **BEM naming convention** for maintainability  
+✅ **Styled with Vanilla CSS** – Implements the **BEM naming convention** for maintainability
 
 ---
 
@@ -24,41 +24,46 @@ A **responsive** Mortgage Repayment Calculator built with **React and TypeScript
 ## 📦 Installation Guide
 
 ### **1️⃣ Extract the ZIP File**
+
 - Unzip the downloaded file to a desired location.
 
 ### **2️⃣ Install Dependencies**
+
 Navigate into the project directory and run:
 npm install
 
 ### **3️⃣ Run the Application**
+
 Start the development server with:
 npm start
 
-## 📂 Project Structure 
+## 📂 Project Structure
 
 /mortgage-calculator
 ├── src
-│   ├── App.css
-│   ├── App.tsx
-│   ├── index.css
-│   ├── index.tsx
-│   ├── logo.svg
-│   ├── react-app-env.d.ts
-│   ├── reportWebVitals.ts
-│   ├── setupTests.ts
-│   ├── components
-│   │   ├── InputField.tsx
-│   │   ├── Modal.tsx
-│   │   └── MortgageCalculator.tsx
-│   ├── hooks
-│   │   └── useMortgageCalculator.ts
-│   ├── styles
-│   │   └── calculator.css
-│   ├── utils
-│   │   ├── mortgageCalculator.ts
-│   │   └── validateInput.ts
-│   └── __tests__
-│       └── mortgageCalculator.test.tsx
+│ ├── App.css
+│ ├── App.tsx
+│ ├── .eslintrc.json
+│ ├── index.css
+│ ├── index.tsx
+│ ├── logo.svg
+│ ├── .prettierrc
+│ ├── react-app-env.d.ts
+│ ├── reportWebVitals.ts
+│ ├── setupTests.ts
+│ ├── components
+│ │ ├── InputField.tsx
+│ │ ├── Modal.tsx
+│ │ └── MortgageCalculator.tsx
+│ ├── hooks
+│ │ └── useMortgageCalculator.ts
+│ ├── styles
+│ │ └── calculator.css
+│ ├── utils
+│ │ ├── mortgageCalculator.ts
+│ │ └── validateInput.ts
+│ └── **tests**
+│ └── mortgageCalculator.test.tsx
 ├── .gitignore
 ├── package-lock.json
 ├── package.json
@@ -66,14 +71,18 @@ npm start
 ├── tsconfig.json
 
 ## 🧮 Mortgage Calculation Formula
+
 This calculator uses the following formulas to determine the loan amount and monthly repayment:
 
 ### **1️⃣ Loan Calculation**
+
 loan = propertyValue - deposit;
 
 ### **2️⃣ Monthly Repayment Calculation**
-monthlyRepayment = (interestRate / 100 / 12) / (1 - Math.pow(1 + interestRate / 100 / 12, -mortgageTermYears * 12)) * loan;
+
+monthlyRepayment = (interestRate / 100 / 12) / (1 - Math.pow(1 + interestRate / 100 / 12, -mortgageTermYears _ 12)) _ loan;
 
 ## 🧪 Testing
+
 - Unit tests are located in `src/__tests__/`.
 - Run tests with: `npm test`
